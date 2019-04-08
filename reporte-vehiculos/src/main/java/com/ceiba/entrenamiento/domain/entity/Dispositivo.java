@@ -2,6 +2,8 @@ package com.ceiba.entrenamiento.domain.entity;
 
 public class Dispositivo {
 
+	public static final String MENSAJE_IMEI_REQUERIDO = "El imei del dispositivo es requerido";
+
 	private String id;
 	private Ciudad ciudad;
 	private String imei;
@@ -12,6 +14,7 @@ public class Dispositivo {
 	public Dispositivo(String id, Ciudad ciudad, String imei, String ubicacionGps, String descripcion,
 			boolean habilitado) {
 		super();
+		ArgumentValidator.validateRequired(imei, MENSAJE_IMEI_REQUERIDO);
 		this.id = id;
 		this.ciudad = ciudad;
 		this.imei = imei;

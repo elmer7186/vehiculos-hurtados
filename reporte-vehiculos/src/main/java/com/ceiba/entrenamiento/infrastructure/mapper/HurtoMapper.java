@@ -20,4 +20,10 @@ public class HurtoMapper {
 				ciudadMapper.mapToEntity(hurto.getCiudad()), hurto.getFechaHurto(), hurto.getDescripcion());
 	}
 
+	public Hurto mapToDomain(HurtoEntity hurtoEntity) {
+		return new Hurto(hurtoEntity.getId(), vehiculoMapper.mapToDomain(hurtoEntity.getVehiculo()),
+				ciudadMapper.mapToDomain(hurtoEntity.getCiudad()), hurtoEntity.getFechaHurto(),
+				hurtoEntity.getDescripcion());
+	}
+
 }

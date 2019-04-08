@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class Hurto {
 
-	private static final String MENSAJE_VEHICULO_REQUERIDO = "El vehiculo es requerido";
-	private static final String MENSAJE_CIUDAD_REQUERIDA = "La ciudad es requerida";
-	private static final String MENSAJE_FECHA_HURTO_REQUERIDA = "La fecha de hurto es requerida";
+	public static final String MENSAJE_VEHICULO_REQUERIDO = "El vehiculo es requerido";
+	public static final String MENSAJE_CIUDAD_REQUERIDA = "La ciudad es requerida";
+	public static final String MENSAJE_FECHA_HURTO_REQUERIDA = "La fecha de hurto es requerida";
 
 	private String id;
 	private Vehiculo vehiculo;

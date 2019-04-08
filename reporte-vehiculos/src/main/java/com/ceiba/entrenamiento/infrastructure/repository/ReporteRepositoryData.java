@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.ceiba.entrenamiento.infrastructure.entity.ReporteEntity;
 
 @Repository
-public interface ReporteRepositoryData extends MongoRepository<ReporteEntity, Long> {
+public interface ReporteRepositoryData extends MongoRepository<ReporteEntity, String> {
 
 	
 	

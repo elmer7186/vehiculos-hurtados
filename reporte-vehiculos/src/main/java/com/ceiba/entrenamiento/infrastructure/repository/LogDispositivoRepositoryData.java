@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.ceiba.entrenamiento.infrastructure.entity.LogDispositivoEntity;
 
 @Repository
-public interface LogDispositivoRepositoryData extends MongoRepository<LogDispositivoEntity, Long> {
+public interface LogDispositivoRepositoryData extends MongoRepository<LogDispositivoEntity, String> {
 
 }

@@ -2,10 +2,12 @@ package com.ceiba.entrenamiento.infrastructure.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.entrenamiento.application.command.RegistrarLogDispositivoCommand;
+import com.ceiba.entrenamiento.application.dto.LogDispositivoDto;
 
 @RestController
 @RequestMapping("logsDispositivos")
@@ -19,8 +21,8 @@ public class LogDispositivoController {
 	}
 
 	@PostMapping
-	public void registrarLogDispositivo(String imei, String estado, String detalle) {
-		registrarLogDispositivoCommand.execute(imei, estado, detalle);
+	public void registrarLogDispositivo(@RequestBody LogDispositivoDto logDispositivoDto) {
+		registrarLogDispositivoCommand.execute(logDispositivoDto);
 	}
 
 }

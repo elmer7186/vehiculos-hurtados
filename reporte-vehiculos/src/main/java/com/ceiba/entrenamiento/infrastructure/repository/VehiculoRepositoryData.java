@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.ceiba.entrenamiento.infrastructure.entity.VehiculoEntity;
 
 @Repository
-public interface VehiculoRepositoryData extends MongoRepository<VehiculoEntity, Long> {
+public interface VehiculoRepositoryData extends MongoRepository<VehiculoEntity, String> {
 
 	VehiculoEntity findByPlaca(String placa);
 

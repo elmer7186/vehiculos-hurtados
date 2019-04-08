@@ -9,6 +9,12 @@ public class PaisDto {
 		super();
 	}
 
+	public PaisDto(String nombre, String codigo) {
+		super();
+		this.nombre = nombre;
+		this.codigo = codigo;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}

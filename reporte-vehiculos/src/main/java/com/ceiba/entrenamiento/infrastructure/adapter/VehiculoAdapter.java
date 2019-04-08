@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ceiba.entrenamiento.domain.entity.Vehiculo;
 import com.ceiba.entrenamiento.domain.port.VehiculoRepository;
+import com.ceiba.entrenamiento.infrastructure.entity.VehiculoEntity;
 import com.ceiba.entrenamiento.infrastructure.mapper.VehiculoMapper;
 import com.ceiba.entrenamiento.infrastructure.repository.VehiculoRepositoryData;
 
@@ -26,8 +27,9 @@ public class VehiculoAdapter implements VehiculoRepository {
 	}
 
 	@Override
-	public void save(Vehiculo vehiculo) {
-		vehiculoRepositoryData.save(vehiculoMapper.mapToEntity(vehiculo));
+	public Vehiculo save(Vehiculo vehiculo) {
+		VehiculoEntity vehiculoEntity = vehiculoRepositoryData.save(vehiculoMapper.mapToEntity(vehiculo));
+		return vehiculoMapper.mapToDomain(vehiculoEntity);
 	}
 
 }

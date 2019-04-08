@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ceiba.entrenamiento.application.dto.LogDispositivoDto;
 import com.ceiba.entrenamiento.domain.entity.Dispositivo;
 import com.ceiba.entrenamiento.domain.entity.LogDispositivo;
 import com.ceiba.entrenamiento.domain.port.DispositivoRepository;
@@ -23,9 +24,10 @@ public class RegistrarLogDispositivoCommand {
 		this.logDispositivoRepository = logDispositivoRepository;
 	}
 
-	public void execute(String imei, String estado, String detalle) {
-		Dispositivo dispositivo = dispositivoRepository.findByImei(imei);
-		LogDispositivo logDispositivo = new LogDispositivo(null, dispositivo, estado, detalle, new Date());
+	public void execute(LogDispositivoDto logDispositivoDto) {
+		Dispositivo dispositivo = dispositivoRepository.findByImei(logDispositivoDto.getImei());
+		LogDispositivo logDispositivo = new LogDispositivo(null, dispositivo, logDispositivoDto.getEstado(),
+				logDispositivoDto.getDetalle(), new Date());
 		logDispositivoRepository.save(logDispositivo);
 	}
 }

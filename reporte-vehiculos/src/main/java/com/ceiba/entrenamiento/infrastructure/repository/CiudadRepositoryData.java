@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.ceiba.entrenamiento.infrastructure.entity.CiudadEntity;
 
 @Repository
-public interface CiudadRepositoryData extends MongoRepository<CiudadEntity, Long> {
+public interface CiudadRepositoryData extends MongoRepository<CiudadEntity, String> {
 
 	CiudadEntity findByCodigo(String codigo);
 

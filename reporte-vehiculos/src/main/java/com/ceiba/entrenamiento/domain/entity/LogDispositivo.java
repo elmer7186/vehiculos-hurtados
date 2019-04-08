@@ -20,7 +20,7 @@ public class LogDispositivo {
 	public LogDispositivo(String id, Dispositivo dispositivo, String estado, String detalle, Date fecha) {
 		super();
 		ArgumentValidator.validateRequired(dispositivo, MENSAJE_DISPOSITIVO_REQUERIDO);
-		ArgumentValidator.validateRequired(estado, MENSAJE_DISPOSITIVO_REQUERIDO);
+		ArgumentValidator.validateRequired(estado, MENSAJE_ESTADO_REQUERIDO);
 		this.id = id;
 		this.dispositivo = dispositivo;
 		this.estado = estado;

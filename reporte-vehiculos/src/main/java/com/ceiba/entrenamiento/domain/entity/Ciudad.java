@@ -2,9 +2,9 @@ package com.ceiba.entrenamiento.domain.entity;
 
 public class Ciudad {
 
-	private static final String MENSAJE_PAIS_REQUERIDO = "El país es requerido";
-	private static final String MENSAJE_CODIGO_CIUDAD_REQUERIDO = "El codigo de ciudad es requerido";
-	private static final String MENSAJE_NOMBRE_CIUDAD_REQUERIDO = "El nombre de ciudad es requerido";
+	public static final String MENSAJE_PAIS_REQUERIDO = "El país es requerido";
+	public static final String MENSAJE_CODIGO_CIUDAD_REQUERIDO = "El codigo de ciudad es requerido";
+	public static final String MENSAJE_NOMBRE_CIUDAD_REQUERIDO = "El nombre de ciudad es requerido";
 
 	private String id;
 	private Pais pais;

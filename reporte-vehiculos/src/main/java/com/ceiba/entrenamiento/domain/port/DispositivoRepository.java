@@ -6,4 +6,6 @@ public interface DispositivoRepository {
 
 	Dispositivo findByImei(String imei);
 
+	void save(Dispositivo dispositivo);
+
 }

@@ -13,7 +13,7 @@ public class DispositivoAdapter implements DispositivoRepository {
 
 	private DispositivoRepositoryData dispositivoRepositoryData;
 	private DispositivoMapper dispositivoMapper;
-	
+
 	@Autowired
 	public DispositivoAdapter(DispositivoRepositoryData dispositivoRepositoryData,
 			DispositivoMapper dispositivoMapper) {
@@ -24,6 +24,11 @@ public class DispositivoAdapter implements DispositivoRepository {
 	@Override
 	public Dispositivo findByImei(String imei) {
 		return dispositivoMapper.mapToDomain(dispositivoRepositoryData.findByImei(imei));
+	}
+
+	@Override
+	public void save(Dispositivo dispositivo) {
+		dispositivoRepositoryData.save(dispositivoMapper.mapToEntity(dispositivo));
 	}
 
 }

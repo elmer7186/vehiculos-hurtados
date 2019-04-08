@@ -12,8 +12,17 @@ public class ReporteMapper {
 	@Autowired
 	private DispositivoMapper dispositivoMapper;
 
+	@Autowired
+	private VehiculoMapper vehiculoMapper;
+
 	public ReporteEntity mapToEntity(Reporte reporte) {
 		return new ReporteEntity(reporte.getId(), dispositivoMapper.mapToEntity(reporte.getDispositivo()),
-				reporte.getFoto(), reporte.getFecha());
+				vehiculoMapper.mapToEntity(reporte.getVehiculo()), reporte.getFoto(), reporte.getFecha());
+	}
+
+	public Reporte mapToDomain(ReporteEntity reporteEntity) {
+		return new Reporte(reporteEntity.getId(), dispositivoMapper.mapToDomain(reporteEntity.getDispositivo()),
+				vehiculoMapper.mapToDomain(reporteEntity.getVehiculo()), reporteEntity.getFoto(),
+				reporteEntity.getFecha());
 	}
 }

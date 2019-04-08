@@ -13,15 +13,24 @@ public class DispositivoMapper {
 	private CiudadMapper ciudadMapper;
 
 	public Dispositivo mapToDomain(DispositivoEntity dispositivoEntity) {
-		return new Dispositivo(dispositivoEntity.getId(), ciudadMapper.mapToDomain(dispositivoEntity.getCiudad()),
-				dispositivoEntity.getImei(), dispositivoEntity.getUbicacionGps(), dispositivoEntity.getDescripcion(),
-				dispositivoEntity.isHabilitado());
+		Dispositivo dispositivoRetorno = null;
+		if (dispositivoEntity != null) {
+			dispositivoRetorno = new Dispositivo(dispositivoEntity.getId(),
+					ciudadMapper.mapToDomain(dispositivoEntity.getCiudad()), dispositivoEntity.getImei(),
+					dispositivoEntity.getUbicacionGps(), dispositivoEntity.getDescripcion(),
+					dispositivoEntity.isHabilitado());
+		}
+		return dispositivoRetorno;
 	}
 
 	public DispositivoEntity mapToEntity(Dispositivo dispositivo) {
-		return new DispositivoEntity(dispositivo.getId(), ciudadMapper.mapToEntity(dispositivo.getCiudad()),
-				dispositivo.getImei(), dispositivo.getUbicacionGps(), dispositivo.getDescripcion(),
-				dispositivo.isHabilitado());
+		DispositivoEntity dispositivoRetorno = null;
+		if (dispositivo != null) {
+			dispositivoRetorno = new DispositivoEntity(dispositivo.getId(),
+					ciudadMapper.mapToEntity(dispositivo.getCiudad()), dispositivo.getImei(),
+					dispositivo.getUbicacionGps(), dispositivo.getDescripcion(), dispositivo.isHabilitado());
+		}
+		return dispositivoRetorno;
 	}
 
 }

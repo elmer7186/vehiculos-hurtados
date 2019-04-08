@@ -11,7 +11,7 @@ public class HurtoDto {
 	private String marca;
 	private Date fechaHurto;
 	private String descripcion;
-	private String ciudad;
+	private String codigoCiudad;
 
 	public HurtoDto() {
 		super();
@@ -73,12 +73,12 @@ public class HurtoDto {
 		this.descripcion = descripcion;
 	}
 
-	public String getCiudad() {
-		return ciudad;
+	public String getCodigoCiudad() {
+		return codigoCiudad;
 	}
 
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
+	public void setCodigoCiudad(String codigoCiudad) {
+		this.codigoCiudad = codigoCiudad;
 	}
 
 }

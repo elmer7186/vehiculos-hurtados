@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ceiba.entrenamiento.domain.entity.Reporte;
 import com.ceiba.entrenamiento.domain.port.ReporteRepository;
+import com.ceiba.entrenamiento.infrastructure.entity.ReporteEntity;
 import com.ceiba.entrenamiento.infrastructure.mapper.ReporteMapper;
 import com.ceiba.entrenamiento.infrastructure.repository.ReporteRepositoryData;
 
@@ -21,8 +22,9 @@ public class ReporteAdapter implements ReporteRepository {
 	}
 
 	@Override
-	public void save(Reporte reporte) {
-		reporteRepositoryData.save(reporteMapper.mapToEntity(reporte));
+	public Reporte save(Reporte reporte) {
+		ReporteEntity reporteEntity = reporteRepositoryData.save(reporteMapper.mapToEntity(reporte));
+		return reporteMapper.mapToDomain(reporteEntity);
 	}
 
 }

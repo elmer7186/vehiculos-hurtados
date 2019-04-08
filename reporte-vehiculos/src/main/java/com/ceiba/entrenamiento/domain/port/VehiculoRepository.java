@@ -6,6 +6,6 @@ public interface VehiculoRepository {
 
 	Vehiculo findByPlaca(String placa);
 
-	void save(Vehiculo vehiculo);
+	Vehiculo save(Vehiculo vehiculo);
 
 }

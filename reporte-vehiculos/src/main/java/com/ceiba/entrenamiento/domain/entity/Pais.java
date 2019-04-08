@@ -2,8 +2,8 @@ package com.ceiba.entrenamiento.domain.entity;
 
 public class Pais {
 
-	private static final String MENSAJE_CODIGO_PAIS_REQUERIDO = "El codigo de pais es requerido";
-	private static final String MENSAJE_NOMBRE_PAIS_REQUERIDO = "El nombre de pais es requerido";
+	public static final String MENSAJE_CODIGO_PAIS_REQUERIDO = "El codigo de pais es requerido";
+	public static final String MENSAJE_NOMBRE_PAIS_REQUERIDO = "El nombre de pais es requerido";
 
 	private String id;
 	private String codigo;

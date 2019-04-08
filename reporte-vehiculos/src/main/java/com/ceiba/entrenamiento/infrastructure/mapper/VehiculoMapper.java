@@ -9,13 +9,21 @@ import com.ceiba.entrenamiento.infrastructure.entity.VehiculoEntity;
 public class VehiculoMapper {
 
 	public Vehiculo mapToDomain(VehiculoEntity vehiculoEntity) {
-		return new Vehiculo(vehiculoEntity.getId(), vehiculoEntity.getPlaca(), vehiculoEntity.getMarca(),
-				vehiculoEntity.getTipo(), vehiculoEntity.getColor(), vehiculoEntity.getModelo());
+		Vehiculo vehiculoRetorno = null;
+		if (vehiculoEntity != null) {
+			vehiculoRetorno = new Vehiculo(vehiculoEntity.getId(), vehiculoEntity.getPlaca(), vehiculoEntity.getMarca(),
+					vehiculoEntity.getTipo(), vehiculoEntity.getColor(), vehiculoEntity.getModelo());
+		}
+		return vehiculoRetorno;
 	}
 
 	public VehiculoEntity mapToEntity(Vehiculo vehiculo) {
-		return new VehiculoEntity(vehiculo.getId(), vehiculo.getPlaca(), vehiculo.getMarca(), vehiculo.getTipo(),
-				vehiculo.getColor(), vehiculo.getModelo());
+		VehiculoEntity vehiculoRetorno = null;
+		if (vehiculo != null) {
+			vehiculoRetorno = new VehiculoEntity(vehiculo.getId(), vehiculo.getPlaca(), vehiculo.getMarca(),
+					vehiculo.getTipo(), vehiculo.getColor(), vehiculo.getModelo());
+		}
+		return vehiculoRetorno;
 	}
 
 }

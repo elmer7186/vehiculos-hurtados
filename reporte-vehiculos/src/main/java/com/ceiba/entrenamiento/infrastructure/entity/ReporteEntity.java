@@ -11,6 +11,7 @@ public class ReporteEntity {
 	@Id
 	private String id;
 	private DispositivoEntity dispositivo;
+	private VehiculoEntity vehiculo;
 	private String foto;
 	private Date fecha;
 
@@ -18,10 +19,11 @@ public class ReporteEntity {
 		super();
 	}
 
-	public ReporteEntity(String id, DispositivoEntity dispositivo, String foto, Date fecha) {
+	public ReporteEntity(String id, DispositivoEntity dispositivo, VehiculoEntity vehiculo, String foto, Date fecha) {
 		super();
 		this.id = id;
 		this.dispositivo = dispositivo;
+		this.vehiculo = vehiculo;
 		this.foto = foto;
 		this.fecha = fecha;
 	}
@@ -40,6 +42,14 @@ public class ReporteEntity {
 
 	public void setDispositivo(DispositivoEntity dispositivo) {
 		this.dispositivo = dispositivo;
+	}
+
+	public VehiculoEntity getVehiculo() {
+		return vehiculo;
+	}
+
+	public void setVehiculo(VehiculoEntity vehiculo) {
+		this.vehiculo = vehiculo;
 	}
 
 	public String getFoto() {

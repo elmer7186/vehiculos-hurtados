@@ -4,6 +4,8 @@ import com.ceiba.entrenamiento.domain.entity.Hurto;
 
 public interface HurtoRepository {
 
-	void save(Hurto hurto);
+	Hurto save(Hurto hurto);
+
+	Hurto findById(String idHurto);
 
 }

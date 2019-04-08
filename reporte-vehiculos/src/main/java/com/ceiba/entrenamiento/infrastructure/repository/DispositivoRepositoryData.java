@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.ceiba.entrenamiento.infrastructure.entity.DispositivoEntity;
 
 @Repository
-public interface DispositivoRepositoryData extends MongoRepository<DispositivoEntity, Long> {
+public interface DispositivoRepositoryData extends MongoRepository<DispositivoEntity, String> {
 
 	DispositivoEntity findByImei(String imei);
 	

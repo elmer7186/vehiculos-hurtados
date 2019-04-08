@@ -4,30 +4,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ceiba.entrenamiento.application.dto.HurtoDto;
-import com.ceiba.entrenamiento.domain.HurtoService;
+import com.ceiba.entrenamiento.domain.VehiculoService;
 import com.ceiba.entrenamiento.domain.entity.Ciudad;
 import com.ceiba.entrenamiento.domain.entity.Hurto;
 import com.ceiba.entrenamiento.domain.entity.Vehiculo;
 import com.ceiba.entrenamiento.domain.port.CiudadRepository;
+import com.ceiba.entrenamiento.domain.port.HurtoRepository;
 
 @Service
 public class RegistrarDenunciaDeHurtoCommand {
 
-	private HurtoService hurtoService;
+	private HurtoRepository hurtoRepository;
 	private CiudadRepository ciudadRepository;
+	private VehiculoService vehiculoService;
 
 	@Autowired
-	public RegistrarDenunciaDeHurtoCommand(HurtoService hurtoService, CiudadRepository ciudadRepository) {
-		this.hurtoService = hurtoService;
+	public RegistrarDenunciaDeHurtoCommand(HurtoRepository hurtoRepository, CiudadRepository ciudadRepository,
+			VehiculoService vehiculoService) {
+		this.hurtoRepository = hurtoRepository;
 		this.ciudadRepository = ciudadRepository;
+		this.vehiculoService = vehiculoService;
 	}
 
-	public void execute(HurtoDto hurtoDto) {
+	public Hurto execute(HurtoDto hurtoDto) {
 		Vehiculo vehiculo = new Vehiculo(null, hurtoDto.getPlaca(), hurtoDto.getMarca(), hurtoDto.getTipo(),
 				hurtoDto.getColor(), hurtoDto.getModelo());
-		Ciudad ciudad = ciudadRepository.findByCodigo(hurtoDto.getCiudad());
+		vehiculo = vehiculoService.almacenarVehiculo(vehiculo);
+		Ciudad ciudad = ciudadRepository.findByCodigo(hurtoDto.getCodigoCiudad());
 		Hurto hurto = new Hurto(null, vehiculo, ciudad, hurtoDto.getFechaHurto(), hurtoDto.getDescripcion());
-		hurtoService.registrarHurtoVehiculo(hurto);
+		return hurtoRepository.save(hurto);
 	}
 
 }

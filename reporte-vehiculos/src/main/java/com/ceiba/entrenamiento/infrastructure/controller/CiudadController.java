@@ -1,6 +1,7 @@
 package com.ceiba.entrenamiento.infrastructure.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,11 @@ public class CiudadController {
 	@PostMapping
 	public void guardarCiudad(@RequestBody CiudadDto ciudadDto) {
 		crearEditarCiudadCommand.execute(ciudadDto);
+	}
+	
+	@GetMapping
+	public String test() {
+		return "Me llamaron entonces respondí";
 	}
 
 }
