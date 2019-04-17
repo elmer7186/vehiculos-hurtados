@@ -19,6 +19,7 @@ import com.ceiba.entrenamiento.domain.entity.Dispositivo;
 import com.ceiba.entrenamiento.domain.entity.Vehiculo;
 import com.ceiba.entrenamiento.domain.port.VehiculoRepository;
 import com.ceiba.entrenamiento.domini.builder.DispositivoBuilderTest;
+import com.ceiba.entrenamiento.domini.builder.VehiculoBuilderTest;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -56,7 +57,9 @@ public class RegistrarAvistamientoVehiculoCommandIntegrationTest {
 		Dispositivo dispositivo = DispositivoBuilderTest.defaultValues().withImei(IMEI_DISPOSITIVO).build();
 		dispositivoService.guardarDispositivo(dispositivo);
 		// act
-		vehiculoService.almacenarVehiculo(PLACA_VEHICULO);
+		Vehiculo vehiculo = VehiculoBuilderTest.defaultValues().withColor(COLOR_VEHICULO).withPlaca(PLACA_VEHICULO)
+				.withMarca(MARCA_VEHICULO).withModelo(MODELO_VEHICULO).withTipo(TIPO_VEHICULO).build();
+		vehiculoService.almacenarVehiculo(vehiculo);
 		registrarAvistamientoVehiculoCommand.execute(avistamientoDto);
 		Vehiculo vehiculoAlmacenado = vehiculoRepository.findByPlaca(PLACA_VEHICULO);
 
@@ -78,6 +81,7 @@ public class RegistrarAvistamientoVehiculoCommandIntegrationTest {
 		registrarAvistamientoVehiculoCommand.execute(avistamientoDto);
 		Vehiculo vehiculoNuevo = vehiculoRepository.findByPlaca(PLACA_VEHICULO);
 
+		//TODO ajustar asserts con datos de avistamiento
 		// assert
 		Assert.assertEquals(COLOR_VEHICULO, vehiculoNuevo.getColor());
 		Assert.assertEquals(MARCA_VEHICULO, vehiculoNuevo.getMarca());

@@ -28,7 +28,7 @@ public class CiudadController {
 	
 	@GetMapping
 	public String test() {
-		return "Me llamaron entonces respondÃ­";
+		return "Me llamaron entonces respondí";
 	}
 
 }

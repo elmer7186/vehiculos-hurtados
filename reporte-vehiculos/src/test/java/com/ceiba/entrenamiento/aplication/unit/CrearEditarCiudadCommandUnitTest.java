@@ -31,7 +31,7 @@ public class CrearEditarCiudadCommandUnitTest {
 	private static final String NOMBRE_CIUDAD_ALTERNO = "Cali La Sucursal";
 	private static final String CODIGO_PAIS = "COL";
 	private static final String NOMBRE_PAIS = "Colombia";
-	private static final String MENSAJE_SE_ESPERABA_EXCEPCION = "Se esperaba excepciÃ³n y esta no fue lanzada";
+	private static final String MENSAJE_SE_ESPERABA_EXCEPCION = "Se esperaba excepción y esta no fue lanzada";
 
 	@Autowired
 	private CrearEditarCiudadCommand crearEditarCiudadCommand;

@@ -37,7 +37,7 @@ public class RegistrarAvistamientoVehiculoCommandUnitTest {
 	private static final String IMEI_DISPOSITIVO = "1987252771";
 	private static final String FOTO_AVISTAMIENTO = "foto_prueba.jpg";
 	private static final String FECHA_AVISTAMIENTO = "24/02/2019 10:30";
-	private static final String MENSAJE_SE_ESPERABA_EXCEPCION = "Se esperaba excepciÃ³n y esta no fue lanzada";
+	private static final String MENSAJE_SE_ESPERABA_EXCEPCION = "Se esperaba excepción y esta no fue lanzada";
 
 	private SimpleDateFormat formatoFechaHora = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 

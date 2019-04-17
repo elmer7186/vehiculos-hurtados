@@ -15,3 +15,8 @@ zuul:
     customer:
       path: /reporte/**
       serviceId: reporte-service
+      
+security:
+  oauth2:
+    resource:
+      filter-order: 3

@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    initialization-mode: always
+    password: admin
+    username: sa
+    url: jdbc:h2:mem:admin
+    driver-class-name: org.h2.Driver
+  
+  h2:    console:      enabled: true
